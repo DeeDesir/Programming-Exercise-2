@@ -13,10 +13,10 @@ def scan_for_spam(email):
     spam_score = 0
     found_keywords = []
 
-    # Convert the email to lowercase to make the search case-insensitive
+ # Convert the email to lowercase to make the search case-insensitive
     email_lower = email.lower()
 
-    # Check each keyword/phrase and see if it's in the email
+ # Check each keyword/phrase and see if it's in the email
     for keyword in spam_keywords:
         if keyword in email_lower:
             spam_score += 1
@@ -37,13 +37,14 @@ def classify_spam(spam_score):
 def main():
     email_message = input("Enter the email message to scan: ")
     
-    # Scan for spam keywords
+   
+# Scan for spam keywords
     spam_score, found_keywords = scan_for_spam(email_message)
     
-    # Classify spam likelihood
+# Classify spam likelihood
     spam_likelihood = classify_spam(spam_score)
     
-    # Output the results
+# Output the results
     print(f"\nSpam score: {spam_score}")
     print(f"Spam likelihood: {spam_likelihood}")
     if found_keywords:
